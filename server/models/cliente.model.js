@@ -6,4 +6,5 @@ const ClienteSchema = new mongoose.Schema({
     correo: { type: String },
     celular: { type: Number },
 }, { timestamps: true });
-module.exports.Cliente = mongoose.model('Clientes', ClienteSchema);
+const Cliente = mongoose.model('Clientes', ClienteSchema);
+module.exports = Cliente;

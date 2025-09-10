@@ -1,15 +1,15 @@
-const Producto = require('../models/productos.model');
-const getProductos = async (req, res) => {
+const Cliente = require('../models/cliente.model');
+const getClientes = async (req, res) => {
     try {
-        console.log('Buscando productos...');
-        const productos = await Producto.find();
-        res.json(productos);
-        console.log('Productos encontrados ');
+        console.log('Buscando clientes...');
+        const clientes = await Cliente.find();
+        res.json(clientes);
+        console.log('Clientes encontrados ');
     } catch (error) {
-        return res.status(500).json({ message: 'Error al obtener los productos' });
+        return res.status(500).json({ message: 'Error al obtener los clientes' });
     }
 }
-const getProductoById = async (req, res) => {
+const getClienteById = async (req, res) => {
     try {
         console.log('Buscando productos...');
         const { id } = req.params;
@@ -25,8 +25,7 @@ const getProductoById = async (req, res) => {
     }
 }
 
-
-const postProductos = async (req, res) => {
+const postClientes = async (req, res) => {
     try {
         const nuevoProducto = new Producto(req.body);
         await nuevoProducto.save();
@@ -37,7 +36,7 @@ const postProductos = async (req, res) => {
     }
 }
 
-const deleteProductos = async (req, res) => {
+const deleteClientes = async (req, res) => {
     try {
         const { id } = req.params;
         const productoAEliminar = await Producto.findByIdAndDelete(id);
@@ -50,7 +49,7 @@ const deleteProductos = async (req, res) => {
         return res.status(500).json({ message: 'Error al eliminar el producto' });
     }
 }
-const putProductos = async (req, res) => {
+const putClientes = async (req, res) => {
     try {
         const { id } = req.params;
         const datosActualizados = req.body;
@@ -64,4 +63,4 @@ const putProductos = async (req, res) => {
         return res.status(500).json({ message: 'Error al actualizar el producto' });
     }
 }
-module.exports = { getProductos, getProductoById, postProductos, deleteProductos, putProductos };
+module.exports = { getClientes, getClienteById, postClientes, deleteClientes, putClientes };

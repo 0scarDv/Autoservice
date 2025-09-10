@@ -1,7 +1,8 @@
+
 import axios from 'axios';
 import React, { useState } from 'react'
 
-export const FormProductosModal = ({ open, onClose,refrescarLista }) => {
+export const FormClientes = ({ open, onClose,refrescarLista }) => {
     const [nombre, setNombre] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [precio, setPrecio] = useState('');
@@ -37,7 +38,7 @@ export const FormProductosModal = ({ open, onClose,refrescarLista }) => {
     return (
         <div className='z-30 bg-black/75 w-full h-full fixed top-0 left-0 flex items-center justify-center'>
             <div className='z-40 bg-white p-6 rounded-lg shadow-lg w-96 space-y-4'>
-                <h2 className="text-xl font-bold text-gray-700">Agregar Producto</h2>
+                <h2 className="text-xl font-bold text-gray-700">Agregar Cliente</h2>
 
                 <input type="text" name="nombre" placeholder="Nombre"
 
